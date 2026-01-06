@@ -60,9 +60,8 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex text-[11px] uppercase font-semibold text-stone-500 tracking-[0.2em] space-x-8 items-center">
-                <a href="#work" class="hover:text-stone-900 transition-colors"><span class="lang-es">Obra</span><span class="lang-en">Work</span></a>
-                <a href="#originals" class="hover:text-stone-900 transition-colors text-rose-600"><span class="lang-es">Shop Originales</span><span class="lang-en">Shop Originals</span></a>
+            <div class="hidden lg:flex text-[11px] uppercase font-semibold text-stone-500 tracking-[0.2em] space-x-8 items-center">
+                <a href="#originals" class="hover:text-stone-900 transition-colors text-rose-600"><span class="lang-es">Shop</span><span class="lang-en">Shop</span></a>
                 <a href="#mentorship" class="hover:text-stone-900 transition-colors"><span class="lang-es">Mentorías</span><span class="lang-en">Mentorships</span></a>
                 <a href="#workshops" class="hover:text-stone-900 transition-colors"><span class="lang-es">Talleres</span><span class="lang-en">Workshops</span></a>
                 <a href="#about" class="hover:text-stone-900 transition-colors"><span class="lang-es">Bio</span><span class="lang-en">Bio</span></a>
@@ -72,7 +71,7 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
             <div class="flex items-center gap-6 z-50">
                 
                  <!-- CTA Button (New) -->
-                 <a href="#contact" class="hidden md:flex bg-stone-900 hover:bg-stone-700 text-white px-5 py-2 rounded-[2px] transition-all text-[10px] font-bold uppercase tracking-widest items-center">
+                 <a href="#contact" class="hidden lg:flex bg-stone-900 hover:bg-stone-700 text-white px-5 py-2 rounded-[2px] transition-all text-[10px] font-bold uppercase tracking-widest items-center">
                     <span class="lang-es">Trabajemos Juntos</span><span class="lang-en">Let's Work Together</span>
                 </a>
 
@@ -92,16 +91,16 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                 </button>
 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-stone-800 hover:text-stone-500 transition-colors" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <button class="lg:hidden text-stone-800 hover:text-stone-500 transition-colors" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#fcfbf9] border-t border-stone-100 p-6 flex flex-col space-y-6 text-center text-sm font-medium shadow-lg h-screen z-40">
-            <a href="#work" class="text-stone-600 hover:text-stone-900" onclick="document.getElementById('mobile-menu').classList.add('hidden')"><span class="lang-es">Trabajos</span><span class="lang-en">Work</span></a>
-            <a href="#originals" class="text-rose-600 hover:text-rose-800 font-bold" onclick="document.getElementById('mobile-menu').classList.add('hidden')"><span class="lang-es">Shop Originales</span><span class="lang-en">Shop Originals</span></a>
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-[#fcfbf9] border-t border-stone-100 p-6 flex flex-col space-y-6 text-center text-sm font-medium shadow-lg h-screen z-40">
+            <a href="#work" class="text-stone-600 hover:text-stone-900" onclick="document.getElementById('mobile-menu').classList.add('hidden')"><span class="lang-es">Portfolio</span><span class="lang-en">Portfolio</span></a>
+            <a href="#originals" class="text-rose-600 hover:text-rose-800 font-bold" onclick="document.getElementById('mobile-menu').classList.add('hidden')"><span class="lang-es">Shop</span><span class="lang-en">Shop</span></a>
             <a href="#mentorship" class="text-stone-600 hover:text-stone-900" onclick="document.getElementById('mobile-menu').classList.add('hidden')"><span class="lang-es">Mentorías</span><span class="lang-en">Mentorships</span></a>
             <a href="#workshops" class="text-stone-600 hover:text-stone-900" onclick="document.getElementById('mobile-menu').classList.add('hidden')"><span class="lang-es">Talleres</span><span class="lang-en">Workshops</span></a>
             <a href="#contact" class="text-stone-600 hover:text-stone-900" onclick="document.getElementById('mobile-menu').classList.add('hidden')"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></a>
