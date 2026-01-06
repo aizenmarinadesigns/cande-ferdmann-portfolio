@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candela Ferdmann | Portfolio & Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fafafa; }
+        .serif-title { font-family: 'Instrument Serif', serif; }
+        
+        .lang-en { display: none; }
+        body.english-mode .lang-es { display: none; }
+        body.english-mode .lang-en { display: block; }
+        body.english-mode #toggle-dot { transform: translateX(20px); }
+
+        /* Carrusel Infinito Estilo Aira */
+        .carousel-container { overflow: hidden; position: relative; width: 100%; }
+        .carousel-track { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; padding-bottom: 2rem; }
+        .carousel-track::-webkit-scrollbar { display: none; }
+        .carousel-item { flex: 0 0 320px; scroll-snap-align: start; transition: opacity 0.3s; }
+        .sold-out { filter: grayscale(1); opacity: 0.5; }
+
+        /* Pills */
+        .pill { font-size: 9px; font-weight: bold; padding: 4px 10px; border-radius: 99px; text-transform: uppercase; letter-spacing: 1px; position: absolute; top: 15px; left: 15px; z-index: 10; }
+        .pill-sold { background: #555; color: white; }
+        .pill-avail { background: #f472b6; color: white; }
+
+        /* FAQ Acordeón */
+        .faq-content { max-height: 0; overflow: hidden; transition: all 0.3s ease-out; opacity: 0; }
+        .faq-item.active .faq-content { max-height: 200px; opacity: 1; padding-top: 1rem; }
+
+        /* FOMO */
+        @keyframes titilar { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .luz-titilante { animation: titilar 1.5s infinite; width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+    </style>
+</head>
+<body class="text-zinc-900">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="serif-title text-3xl italic">Candela Ferdmann</a>
+            <div class="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-widest uppercase">
+                <a href="#bio">BIO</a>
+                <a href="#mentorias">MENTORÍAS</a>
+                <a href="#shop">SHOP</a>
+                <div class="flex items-center gap-2 bg-zinc-100 p-1 rounded-full cursor-pointer" onclick="document.body.classList.toggle('english-mode')">
+                    <span class="text-[9px] ml-2">ES</span>
+                    <div class="relative w-10 h-5 bg-zinc-300 rounded-full"><div id="toggle-dot" class="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition-transform"></div></div>
+                    <span class="text-[9px] mr-2">EN</span>
+                </div>
+                <a href="https://wa.me/34623282101" class="bg-zinc-900 text-white px-6 py-2 rounded-full hover:bg-zinc-700 transition">CONTACTO</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="bio" class="pt-48 pb-20 px-6 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
+        <div class="w-64 h-64 rounded-full overflow-hidden shadow-2xl flex-shrink-0"><img src="img/Cande-foto.webp" class="w-full h-full object-cover"></div>
+        <div>
+            <h1 class="serif-title text-5xl md:text-7xl mb-6 italic">Ilustración & Mentoría</h1>
+            <p class="text-lg text-zinc-500 italic mb-8 max-w-xl">Encontrá tu voz propia a través de procesos creativos profundos y profesionales.</p>
+            <div class="flex gap-4 justify-center md:justify-start">
+                <a href="https://calendly.com/candelaferdmann" class="bg-zinc-900 text-white px-8 py-3 rounded-full text-sm">Reservar Mentoría</a>
+                <a href="https://instagram.com/candelaferdmann" class="border border-zinc-900 px-8 py-3 rounded-full text-sm">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="serif-title text-5xl text-center mb-4 italic">Shop</h2>
+        <p class="text-center text-zinc-500 mb-12 max-w-2xl mx-auto italic text-sm">
+            <span class="lang-es">Si te gustaron mis imágenes y querés que te acompañen, podés conseguirlas aquí. Si no encontrás alguna obra, <a href="https://wa.me/34623282101" class="underline">escribime</a>.</span>
+            <span class="lang-en">If you like my work and want it to accompany you, you can find it here. If you can't find a piece, <a href="https://wa.me/34623282101" class="underline">message me</a>.</span>
+        </p>
+
+        <div class="grid lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <div class="relative"><span class="pill pill-sold">Sold Out</span><img src="img/cande-ferdmann-3.webp" class="rounded-3xl sold-out w-full aspect-[4/5] object-cover"></div>
+                        <h4 class="font-bold mt-4 italic">Mundo Diamante</h4>
+                        <p class="text-[10px] text-zinc-400">Acuarela - 30x40cm - Original</p>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="relative"><span class="pill pill-avail">Available</span><img src="img/cande-ferdmann-2.webp" class="rounded-3xl w-full aspect-[4/5] object-cover"></div>
+                        <h4 class="font-bold mt-4 italic">Bosque Nocturno</h4>
+                        <p class="text-[10px] text-zinc-400">Digital - A3 - Impresión Alta Calidad</p>
+                        <button onclick="addToCart('Bosque Nocturno', 45)" class="mt-4 w-full border border-zinc-900 py-3 rounded-full text-[10px] font-bold uppercase hover:bg-zinc-900 hover:text-white transition">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2.5rem] border border-zinc-100 shadow-xl h-fit sticky top-28">
+                <h3 class="serif-title text-2xl mb-6 italic border-b pb-4">Carrito</h3>
+                <div id="cart-list" class="space-y-4 mb-8 text-sm italic text-zinc-400">Tu carrito está vacío.</div>
+                
+                <div class="space-y-3 mb-8">
+                    <p class="text-[9px] font-bold uppercase tracking-widest text-zinc-300">Seleccioná tu pago:</p>
+                    <label class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer hover:bg-zinc-50"><input type="radio" name="payment" value="paypal" checked> <span class="text-xs">PayPal (Global)</span></label>
+                    <label class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer hover:bg-zinc-50"><input type="radio" name="payment" value="mp"> <span class="text-xs">Mercado Pago (Arg)</span></label>
+                    <label class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer hover:bg-zinc-50"><input type="radio" name="payment" value="whatsapp"> <span class="text-xs">En Persona (WhatsApp)</span></label>
+                </div>
+                
+                <button onclick="handleCheckout()" class="w-full bg-zinc-900 text-white py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-zinc-700 transition">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="mentorias" class="py-20 bg-zinc-50 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="serif-title text-4xl mb-8 italic">Mentorías Personalizadas</h2>
+            <p class="text-zinc-600 mb-10 leading-relaxed italic">La primera charla de 30' es <b>completamente gratuita</b>. Luego combinamos encuentros semanales, quincenales o mensuales.</p>
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <div class="bg-white p-8 rounded-3xl border border-zinc-100 shadow-sm"><span class="luz-titilante bg-pink-400"></span><span class="text-[10px] font-bold uppercase tracking-widest text-pink-500">Último Cupo</span><h4 class="serif-title text-2xl my-4 italic">Taller Narrativa</h4></div>
+                <div class="bg-white p-8 rounded-3xl border border-zinc-100 shadow-sm"><span class="luz-titilante bg-yellow-400"></span><span class="text-[10px] font-bold uppercase tracking-widest text-yellow-600">2 Lugares</span><h4 class="serif-title text-2xl my-4 italic">Portfolio Review</h4></div>
+            </div>
+            <a href="https://calendly.com/candelaferdmann" class="bg-pink-400 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-pink-500 transition">Agendar Charla Gratuita</a>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 overflow-hidden">
+        <h3 class="serif-title text-4xl text-center mb-16 italic">Voces de la comunidad</h3>
+        <div class="flex gap-8 overflow-x-auto pb-8 scrollbar-hide">
+            <div class="bg-white p-8 rounded-3xl min-w-[320px] shadow-sm border border-zinc-100">
+                <div class="text-yellow-400 mb-4 text-xs">★★★★★</div>
+                <p class="italic text-sm text-zinc-600 mb-6">"Su mentoría fue un antes y un después en mi carrera. Muy técnica y humana."</p>
+                <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-zinc-100 overflow-hidden"><img src="img/Cande-foto.webp" class="grayscale"></div><span class="text-[10px] font-bold uppercase">Martín R. - Alumno</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 max-w-3xl mx-auto px-6">
+        <h3 class="serif-title text-4xl text-center mb-12 italic">Preguntas Frecuentes</h3>
+        <div class="space-y-4">
+            <div class="faq-item border-b border-zinc-200" onclick="this.classList.toggle('active')">
+                <div class="flex justify-between py-6 cursor-pointer font-bold text-[10px] uppercase tracking-[0.2em]"><span>¿Cómo funcionan las mentorías?</span><span>↓</span></div>
+                <div class="faq-content text-sm italic text-zinc-500">Son personalizadas y de 60 minutos. La primera es gratis para diagnóstico.</div>
+            </div>
+            <div class="faq-item border-b border-zinc-200" onclick="this.classList.toggle('active')">
+                <div class="flex justify-between py-6 cursor-pointer font-bold text-[10px] uppercase tracking-[0.2em]"><span>¿Haces envíos de obra?</span><span>↓</span></div>
+                <div class="faq-content text-sm italic text-zinc-500">Sí, envío originales a todo el mundo y las impresiones están listas para enmarcar.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-zinc-100 text-center uppercase tracking-[0.3em] text-zinc-300 text-[10px]">
+        <div class="flex justify-center gap-10 mb-8 lowercase italic tracking-normal text-zinc-500 text-sm">
+            <a href="https://instagram.com/candelaferdmann">instagram</a>
+            <a href="https://linkedin.com">linkedin</a>
+            <a href="mailto:candelaferdmann@gmail.com">email</a>
+        </div>
+        © 2026 Candela Ferdmann
+    </footer>
+
+    <script>
+        let cart = [];
+        function addToCart(name, price) {
+            cart.push({name, price});
+            renderCart();
+        }
+        function renderCart() {
+            const list = document.getElementById('cart-list');
+            if(cart.length === 0) { list.innerHTML = "Carrito vacío"; return; }
+            list.innerHTML = cart.map((item, i) => `
+                <div class="flex justify-between items-center bg-zinc-50 p-4 rounded-2xl mb-2">
+                    <span class="font-bold text-zinc-900">${item.name}</span>
+                    <button onclick="cart.splice(${i},1);renderCart()" class="text-red-400 font-bold text-[9px]">QUITAR</button>
+                </div>
+            `).join('');
+        }
+        function handleCheckout() {
+            if(cart.length === 0) return alert("El carrito está vacío");
+            const method = document.querySelector('input[name="payment"]:checked').value;
+            const phone = "34623282101";
+            if(method === 'paypal') window.location.href = "https://paypal.me/candelaferdmann";
+            else if(method === 'mp') window.location.href = "https://mercadopago.com.ar";
+            else window.location.href = `https://wa.me/${phone}?text=Hola Cande! Quiero coordinar el pago presencial de: ${cart.map(i=>i.name).join(', ')}`;
+        }
+    </script>
+</body>
+</html>
