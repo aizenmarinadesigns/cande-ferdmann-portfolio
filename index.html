@@ -200,123 +200,106 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
     </aside>
 
     <!-- Main Grid Gallery (Modified Layout) -->
-    <main class="min-h-screen md:px-12 md:pb-12 max-w-[1800px] mr-auto ml-auto pt-24 pr-6 pb-24 pl-6" id="work">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[minmax(100px,_auto)]">
-            
-            <!-- 1. Vertical Item -->
-            <div class="fade-in-up group relative w-full h-full cursor-zoom-in" onclick="openLightbox(0)">
-                <div class="relative overflow-hidden rounded-[2px] h-full">
-                     <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4f10382e-4629-4edb-a416-d79f0dcb9479_800w.png" class="w-full h-full object-cover aspect-[3/4] grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
-                </div>
-                <div class="mt-2 hidden">
-                    <p class="text-[11px] text-stone-900 font-bold uppercase tracking-wide">
-                        <span class="lang-es">Bologna 2016 — Collage</span>
-                        <span class="lang-en">Bologna 2016 — Collage</span>
-                    </p>
-                </div>
+    <main class="min-h-screen md:px-12 md:pb-12 max-w-[1800px] mx-auto pt-24 px-6 pb-24" id="work">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+        
+        <div class="fade-in-up group relative w-full cursor-zoom-in" onclick="openLightbox(0)">
+            <div class="relative overflow-hidden rounded-[2px] aspect-square">
+                 <img src="img/bologna-2016-1.webp" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
             </div>
-
-            <!-- 2. Square Item -->
-            <div class="fade-in-up group relative w-full h-full cursor-zoom-in" onclick="openLightbox(1)">
-                <div class="relative overflow-hidden rounded-[2px] h-full">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/ac0b8d52-539e-455c-ae97-92a624118051_800w.jpg" class="w-full h-full object-cover aspect-square grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
-                </div>
-                <div class="hidden">
-                    <p><span class="lang-es">Bosque — Tinta China</span><span class="lang-en">Forest — Indian Ink</span></p>
-                </div>
-            </div>
-
-            <!-- 3. Vertical Item -->
-            <div class="fade-in-up group relative w-full h-full cursor-zoom-in" onclick="openLightbox(2)">
-                <div class="relative overflow-hidden rounded-[2px] h-full">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/89555010-dbb4-444b-912e-6a1a876f8172_800w.png" class="w-full h-full object-cover aspect-[3/4] grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
-                </div>
-                <div class="hidden">
-                    <p><span class="lang-es">Memorias — Técnica Mixta</span><span class="lang-en">Memories — Mixed Media</span></p>
-                </div>
-            </div>
-
-            <!-- 4. Feature Item (Spans Full Width on Mobile, 2 Cols on Desktop) -->
-            <div class="fade-in-up md:col-span-2 group relative w-full h-full cursor-zoom-in" onclick="openLightbox(3)">
-                <div class="relative overflow-hidden rounded-[2px] h-full">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1bc4c81d-bed4-4e20-b320-906bb4e55387_800w.png" class="w-full h-full object-cover aspect-video md:aspect-[2/1] grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
-                </div>
-                <div class="hidden">
-                     <p><span class="lang-es">Silent Book — Digital</span><span class="lang-en">Silent Book — Digital</span></p>
-                </div>
-            </div>
-
-            <!-- 5. Vertical Tall -->
-            <div class="fade-in-up group relative w-full h-full cursor-zoom-in md:row-span-2" onclick="openLightbox(4)">
-                <div class="relative overflow-hidden rounded-[2px] h-full">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/931ec52d-5488-46b5-b3dd-5d041329a55f_800w.jpg" class="w-full h-full object-cover aspect-[3/5] grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
-                </div>
-                <div class="hidden">
-                    <p><span class="lang-es">Pájaros — Acuarela</span><span class="lang-en">Birds — Watercolor</span></p>
-                </div>
-            </div>
-
-            <!-- 6. Square -->
-            <div class="fade-in-up group relative w-full h-full cursor-zoom-in" onclick="openLightbox(5)">
-                <div class="relative overflow-hidden rounded-[2px] h-full">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/445cfc31-e2ca-4bdf-b0fb-4a2c3f2a047b_800w.png" class="w-full h-full object-cover aspect-square grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
-                </div>
-                 <div class="hidden">
-                    <p><span class="lang-es">Invierno — Collage</span><span class="lang-en">Winter — Collage</span></p>
-                </div>
-            </div>
-
-            <!-- 7. Landscape -->
-            <div class="fade-in-up group relative w-full h-full cursor-zoom-in" onclick="openLightbox(6)">
-                <div class="relative overflow-hidden rounded-[2px] h-full">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b37780e0-ff81-4a8b-8077-b72e76cc6f6b_800w.png" class="w-full h-full object-cover aspect-[4/3] grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
-                </div>
-                 <div class="hidden">
-                    <p><span class="lang-es">Botánica — Lápiz</span><span class="lang-en">Botanicals — Pencil</span></p>
-                </div>
-            </div>
-            
-            <!-- 8. Panoramic (Spans 3 cols on LG) -->
-            <div class="fade-in-up md:col-span-2 lg:col-span-3 group relative w-full h-full cursor-zoom-in" onclick="openLightbox(7)">
-                <div class="relative overflow-hidden rounded-[2px] h-full">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/912ef7b6-0adb-4a42-b4c7-470a2ff6afa6_800w.png" class="w-full h-full object-cover aspect-[21/9] grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
-                </div>
-                 <div class="hidden">
-                    <p><span class="lang-es">Editorial — Digital</span><span class="lang-en">Editorial — Digital</span></p>
-                </div>
-            </div>
-            
-            <!-- 9. Square -->
-             <div class="fade-in-up group relative w-full h-full cursor-zoom-in" onclick="openLightbox(8)">
-                <div class="relative overflow-hidden rounded-[2px] h-full">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/cdf688da-6892-407f-95d0-1d1664f7e371_800w.png" class="w-full h-full object-cover aspect-square grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
-                </div>
-                 <div class="hidden">
-                    <p><span class="lang-es">Personajes — Boceto</span><span class="lang-en">Characters — Sketch</span></p>
-                </div>
-            </div>
-
-            <!-- 10. Vertical -->
-            <div class="fade-in-up group relative w-full h-full cursor-zoom-in" onclick="openLightbox(9)">
-                <div class="relative overflow-hidden rounded-[2px] h-full">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/27fee490-8611-4f5c-af99-11f700381bb1_800w.png" class="w-full h-full object-cover aspect-[3/4] grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
-                </div>
-                 <div class="hidden">
-                    <p><span class="lang-es">Nocturno — Tinta</span><span class="lang-en">Nocturne — Ink</span></p>
-                </div>
-            </div>
-
-            <!-- 11. Landscape -->
-            <div class="fade-in-up group relative w-full h-full cursor-zoom-in" onclick="openLightbox(10)">
-                <div class="relative overflow-hidden rounded-[2px] h-full">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2ae8f893-d365-47b4-b09f-4142f740f1dc_800w.jpg" class="w-full h-full object-cover aspect-[4/3] grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
-                </div>
-                 <div class="hidden">
-                    <p><span class="lang-es">Retrato — Foto Pintada</span><span class="lang-en">Portrait — Painted Photo</span></p>
-                </div>
+            <div class="hidden">
+                <p>
+                    <span class="lang-es">Bologna 2016 — Collage</span>
+                    <span class="lang-en">Bologna 2016 — Collage</span>
+                </p>
             </div>
         </div>
-    </main>
+
+        <div class="fade-in-up group relative w-full cursor-zoom-in" onclick="openLightbox(1)">
+            <div class="relative overflow-hidden rounded-[2px] aspect-square">
+                <img src="img/bologna-2016-2.webp" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
+            </div>
+            <div class="hidden">
+                <p>
+                    <span class="lang-es">Bologna 2016 — Collage</span>
+                    <span class="lang-en">Bologna 2016 — Collage</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="fade-in-up group relative w-full cursor-zoom-in" onclick="openLightbox(2)">
+            <div class="relative overflow-hidden rounded-[2px] aspect-square">
+                <img src="img/bombo-1.webp" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
+            </div>
+            <div class="hidden">
+                <p>
+                    <span class="lang-es">Bombo — Ilustración Editorial</span>
+                    <span class="lang-en">Bombo — Editorial Illustration</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="fade-in-up group relative w-full cursor-zoom-in" onclick="openLightbox(3)">
+            <div class="relative overflow-hidden rounded-[2px] aspect-square">
+                <img src="img/bombo-2.webp" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
+            </div>
+            <div class="hidden">
+                 <p>
+                    <span class="lang-es">Bombo — Ilustración Editorial</span>
+                    <span class="lang-en">Bombo — Editorial Illustration</span>
+                 </p>
+            </div>
+        </div>
+
+        <div class="fade-in-up group relative w-full cursor-zoom-in" onclick="openLightbox(4)">
+            <div class="relative overflow-hidden rounded-[2px] aspect-square">
+                <img src="img/cande-ferdmann-1.webp" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
+            </div>
+            <div class="hidden">
+                <p>
+                    <span class="lang-es">Obra Seleccionada</span>
+                    <span class="lang-en">Selected Work</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="fade-in-up group relative w-full cursor-zoom-in" onclick="openLightbox(5)">
+            <div class="relative overflow-hidden rounded-[2px] aspect-square">
+                <img src="img/cande-ferdmann-2.webp" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
+            </div>
+            <div class="hidden">
+                <p>
+                    <span class="lang-es">Obra Seleccionada</span>
+                    <span class="lang-en">Selected Work</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="fade-in-up group relative w-full cursor-zoom-in" onclick="openLightbox(6)">
+            <div class="relative overflow-hidden rounded-[2px] aspect-square">
+                <img src="img/cande-ferdmann-3.webp" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
+            </div>
+            <div class="hidden">
+                <p>
+                    <span class="lang-es">Obra Seleccionada</span>
+                    <span class="lang-en">Selected Work</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="fade-in-up group relative w-full cursor-zoom-in" onclick="openLightbox(7)">
+            <div class="relative overflow-hidden rounded-[2px] aspect-square">
+                <img src="img/cande-ferdmann-010.webp" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out gallery-img">
+            </div>
+            <div class="hidden">
+                <p>
+                    <span class="lang-es">Obra Seleccionada</span>
+                    <span class="lang-en">Selected Work</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
 
     <!-- SHOP ORIGINALS SECTION (New) -->
     <section id="originals" class="bg-stone-50 border-t border-stone-200 pt-20 pb-20 overflow-hidden">
