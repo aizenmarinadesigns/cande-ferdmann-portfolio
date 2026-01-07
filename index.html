@@ -441,38 +441,61 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
     </section>
 
     <!-- About Section -->
-    <section class="bg-white border-stone-100 border-t pt-20 pb-20" id="about">
-        <div class="max-w-6xl mx-auto px-6 md:px-12 w-full">
-            <h3 class="uppercase text-xs font-bold text-stone-400 tracking-[0.2em] text-center mb-16">
-                <span class="lang-es">Sobre Mí</span><span class="lang-en">About Me</span>
-            </h3>
+   <section class="bg-white pt-24 pb-24 border-t border-stone-100" id="about">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+        <h3 class="text-[10px] tracking-[0.3em] font-bold text-stone-400 uppercase mb-16 text-center md:text-left">
+            <span class="lang-es">Sobre Mí</span><span class="lang-en">About Me</span>
+        </h3>
 
-            <div class="flex flex-col md:flex-row items-start gap-12 md:gap-24">
-                <!-- Artist Photo -->
-                <div class="w-full md:w-5/12 sticky top-24">
-                    <div class="aspect-[3/4] bg-stone-100 rounded-[2px] overflow-hidden relative group">
-                         <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5a585a85-95c5-4651-8438-6cb5386b996f_800w.png" alt="Candela Ferdmann" class="transition-all hover:grayscale-0 duration-700 w-full h-full object-cover grayscale">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20">
+            <div class="w-full max-w-[350px] md:max-w-none md:w-5/12">
+                <div class="aspect-[3/4] bg-stone-100 rounded-[2px] overflow-hidden shadow-sm">
+                     <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5a585a85-95c5-4651-8438-6cb5386b996f_800w.png" 
+                          alt="Candela Ferdmann" 
+                          class="w-full h-full object-cover transition-all duration-700 md:grayscale md:hover:grayscale-0">
+                </div>
+            </div>
+
+            <div class="md:w-7/12 w-full">
+                 <div class="text-base md:text-lg font-light text-stone-700 leading-relaxed space-y-6">
+                    <div class="lang-es space-y-6">
+                        <h2 class="text-4xl md:text-5xl font-normal text-stone-900 mb-6 serif-title tracking-tight">Hola, soy Candela.</h2>
+                        <p>Soy Licenciada en Artes Visuales e Ilustradora en Buenos Aires. Mi trabajo explora la sutil relación entre la naturaleza, la infancia y la memoria.</p>
+                        <p>Me apasiona la enseñanza: <strong class="text-stone-900 font-semibold">Dicto talleres de arte, ilustración y collage</strong> para todas las edades, buscando desbloquear la creatividad a través del juego.</p>
+                        <p>¿Querés potenciar tu carrera o aprender una técnica nueva? Te invito a conectar.</p>
+                    </div>
+
+                    <div class="lang-en space-y-6">
+                        <h2 class="text-4xl md:text-5xl font-normal text-stone-900 mb-6 serif-title tracking-tight">Hi, I'm Candela.</h2>
+                        <p>I am a Visual Arts graduate and Illustrator based in Buenos Aires. My work explores nature, childhood, and memory.</p>
+                        <p>I'm passionate about teaching: <strong class="text-stone-900 font-semibold">I offer workshops in art, illustration, and collage</strong>, aiming to unlock creativity through experimentation.</p>
+                        <p>Whether you want to boost your career or learn a new technique, let's connect.</p>
                     </div>
                 </div>
+                
+                <div class="mt-12 flex flex-col sm:flex-row items-center gap-6">
+                     <a href="#mentorship" class="w-full sm:w-auto flex items-center justify-center gap-3 px-10 py-4 bg-stone-900 hover:bg-stone-700 text-white rounded-[2px] transition-all duration-300 shadow-md hover:-translate-y-1">
+                        <i data-lucide="calendar-check" class="w-4 h-4 text-stone-300"></i>
+                        <span class="text-[11px] font-bold tracking-widest uppercase">
+                            <span class="lang-es">Reservar Tutoría</span><span class="lang-en">Book Mentorship</span>
+                        </span>
+                    </a>
 
-                <!-- Text -->
-                <div class="md:w-7/12 w-full pt-4">
-                     <div class="text-base md:text-lg font-light text-stone-700 leading-relaxed space-y-6">
-                        <div class="lang-es space-y-6">
-                            <h2 class="text-3xl font-normal text-stone-900 mb-6 serif-title tracking-tight">Hola, soy Candela.</h2>
-                            <p class="text-stone-600">Soy Licenciada en Artes Visuales e Ilustradora en Buenos Aires. Mi trabajo explora la sutil relación entre la naturaleza, la infancia y la memoria, utilizando técnicas mixtas y digitales.</p>
-                            <p class="text-stone-600">Además de mi trabajo editorial, me apasiona la enseñanza, buscando desbloquear la creatividad a través del juego y la experimentación.</p>
-                        </div>
-                        <div class="lang-en space-y-6">
-                            <h2 class="text-3xl font-normal text-stone-900 mb-6 serif-title tracking-tight">Hi, I'm Candela.</h2>
-                            <p class="text-stone-600">I am a Visual Arts graduate and Illustrator based in Buenos Aires. My work explores the subtle relationship between nature, childhood, and memory, using both mixed media and digital techniques.</p>
-                            <p class="text-stone-600">Beyond editorial work, I am passionate about teaching, aiming to unlock creativity through play and experimentation.</p>
-                        </div>
-                    </div>
+                    <a href="#originals" class="w-full sm:w-auto flex items-center justify-center gap-3 px-10 py-4 bg-white border border-stone-200 hover:border-stone-900 text-stone-900 rounded-[2px] transition-all duration-300">
+                        <i data-lucide="shopping-bag" class="w-4 h-4 text-stone-400"></i>
+                        <span class="text-[11px] font-bold tracking-widest uppercase">
+                            <span class="lang-es">Comprar Obras</span><span class="lang-en">Shop Art</span>
+                        </span>
+                    </a>
+
+                    <a href="#contact" class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-stone-900 transition-colors border-b border-transparent hover:border-stone-900 pb-1 ml-0 sm:ml-4">
+                        <span class="lang-es">Contacto</span><span class="lang-en">Contact</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Mentorships Section -->
     <section id="mentorship" class="bg-[#f2f0eb] pt-20 pb-20 border-y border-stone-200/50">
