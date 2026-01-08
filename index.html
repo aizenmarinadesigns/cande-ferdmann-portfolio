@@ -365,142 +365,119 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
     <!-- ILLUSTRATIONS (New) -->
   <section id="illustrations" class="bg-white pt-24 pb-24 border-t border-stone-100">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-        
-        <header class="flex flex-col md:flex-row justify-between items-end mb-12">
-            <div class="max-w-xl">
-                <h3 class="text-xs tracking-[0.2em] font-bold text-stone-400 uppercase mb-4">
-                    <span class="lang-es">Trabajos</span><span class="lang-en">Works</span>
-                </h3>
-                <h2 class="serif-title text-3xl md:text-4xl text-stone-900 tracking-tight leading-[1.1] mb-4">
-                    <span class="lang-es">Ilustración &<br>Narrativa Visual</span>
-                    <span class="lang-en">Illustration &<br>Visual Narrative</span>
-                </h2>
-                <p class="leading-relaxed text-sm font-light text-zinc-500 max-w-md">
-                    <span class="lang-es">Versatilidad, juego y profesionalismo: Desde libros infantiles hasta diseño editorial e ilustración.</span>
-                    <span class="lang-en">Versatility, play and professionalism: From children's books to editorial design and illustration.</span>
-                </p>
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8">
+            <div>
+                <h3 class="text-xs tracking-[0.2em] font-bold text-stone-400 uppercase mb-4">Trabajos</h3>
+                <h2 class="serif-title text-3xl md:text-4xl text-stone-900 tracking-tight leading-[1.1] mb-4">Ilustración &<br>Narrativa Visual</h2>
+                <p class="leading-relaxed text-sm font-light text-zinc-500 max-w-md">Versatilidad, juego y profesionalismo: Desde libros infantiles hasta diseño editorial e ilustración.</p>
             </div>
-            
             <div class="hidden md:flex gap-3 mb-2">
-                <button onclick="document.getElementById('carousel').scrollBy({left: -400, behavior: 'smooth'})" class="w-12 h-12 rounded-full border border-stone-200 flex items-center justify-center hover:bg-stone-50 transition-all text-stone-900">
-                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                <button onclick="document.getElementById('carousel').scrollBy({left: -400, behavior: 'smooth'})" class="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center hover:bg-stone-50 transition-all text-stone-900">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
                 </button>
-                <button onclick="document.getElementById('carousel').scrollBy({left: 400, behavior: 'smooth'})" class="w-12 h-12 rounded-full bg-stone-900 text-white flex items-center justify-center hover:bg-stone-800 transition-all shadow-lg">
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                <button onclick="document.getElementById('carousel').scrollBy({left: 400, behavior: 'smooth'})" class="w-10 h-10 rounded-full bg-stone-900 text-white flex items-center justify-center hover:bg-stone-800 transition-all shadow-lg">
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </button>
             </div>
         </header>
 
         <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-12 no-scrollbar items-start w-full scroll-smooth">
-            
             <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4">
-                <a href="#contacto" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
+                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
                     <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </a>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-1 text-left">
                     <div class="flex justify-between items-start">
                         <h4 class="serif-title text-xl text-stone-900">El Jardín Perdido</h4>
-                        <a href="#contacto" class="text-stone-300 hover:text-stone-900 transition-colors mt-1">
-                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                        </a>
+                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
                     </div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Editorial • 2023</div>
                 </div>
             </div>
-
             <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4">
-                <a href="#contacto" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
-                    <img src="https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105">
+                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
+                    <img src="https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </a>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-1 text-left">
                     <div class="flex justify-between items-start">
                         <h4 class="serif-title text-xl text-stone-900">Ritmos Urbanos</h4>
-                        <a href="#contacto" class="text-stone-300 hover:text-stone-900 transition-colors mt-1">
-                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                        </a>
+                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
                     </div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Campaña • 2023</div>
                 </div>
             </div>
-
             <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4">
-                <a href="#contacto" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
+                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
                     <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg" class="w-full h-full object-cover group-hover:scale-105">
                 </a>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-1 text-left">
                     <div class="flex justify-between items-start">
                         <h4 class="serif-title text-xl text-stone-900">Colección Flora</h4>
-                        <a href="#contacto" class="text-stone-300 hover:text-stone-900 transition-colors mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
                     </div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Packaging • 2022</div>
                 </div>
             </div>
-
             <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4">
-                <a href="#contacto" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
+                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
                     <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105">
                 </a>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-1 text-left">
                     <div class="flex justify-between items-start">
                         <h4 class="serif-title text-xl text-stone-900">Soledad Moderna</h4>
-                        <a href="#contacto" class="text-stone-300 hover:text-stone-900 transition-colors mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
                     </div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Prensa • 2022</div>
                 </div>
             </div>
-
             <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4">
-                <a href="#contacto" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
+                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
                     <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105">
                 </a>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-1 text-left">
                     <div class="flex justify-between items-start">
                         <h4 class="serif-title text-xl text-stone-900">Mosaicos BCN</h4>
-                        <a href="#contacto" class="text-stone-300 hover:text-stone-900 transition-colors mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
                     </div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Branding • 2021</div>
                 </div>
             </div>
-
             <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4">
-                <a href="#contacto" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
+                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
                     <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg" class="w-full h-full object-cover group-hover:scale-105">
                 </a>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-1 text-left">
                     <div class="flex justify-between items-start">
                         <h4 class="serif-title text-xl text-stone-900">Cuentos de Noche</h4>
-                        <a href="#contacto" class="text-stone-300 hover:text-stone-900 transition-colors mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
                     </div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Infantil • 2021</div>
                 </div>
             </div>
-
             <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4">
-                <a href="#contacto" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
+                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
                     <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105">
                 </a>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-1 text-left">
                     <div class="flex justify-between items-start">
                         <h4 class="serif-title text-xl text-stone-900">La Nueva Era</h4>
-                        <a href="#contacto" class="text-stone-300 hover:text-stone-900 transition-colors mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
                     </div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Editorial • 2020</div>
                 </div>
             </div>
-
             <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4">
-                <a href="#contacto" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
+                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
                     <img src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105">
                 </a>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-1 text-left">
                     <div class="flex justify-between items-start">
                         <h4 class="serif-title text-xl text-stone-900">Bosque Vivo</h4>
-                        <a href="#contacto" class="text-stone-300 hover:text-stone-900 transition-colors mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
                     </div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Textil • 2020</div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -805,52 +782,74 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
     </section>
 
     <!-- Reviews Section (Auto-Scroll) -->
-   <section id="testimonials" class="bg-stone-50 border-t border-stone-200 pt-20 pb-20 overflow-hidden">
-    <h3 class="text-xs tracking-[0.2em] font-bold text-stone-400 uppercase mb-12 text-center">
-        <span class="lang-es">Reseñas</span><span class="lang-en">Reviews</span>
-    </h3>
-    <div class="relative w-full max-w-4xl mx-auto px-6 h-[450px] md:h-[300px]">
-        <div id="review-track" class="absolute w-full flex flex-col items-center text-center">
+   <section id="testimonials" class="bg-stone-50 border-t border-stone-200 pt-24 pb-24">
+    <div class="max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
+        <h3 class="text-xs tracking-[0.2em] font-bold text-stone-400 uppercase mb-12">
+            <span class="lang-es">Reseñas</span><span class="lang-en">Reviews</span>
+        </h3>
+        
+        <div class="flex flex-col gap-20 w-full">
             
-            <div class="review-card opacity-100 transition-opacity duration-700 absolute inset-0 flex flex-col items-center">
-                <div class="w-16 h-16 mb-4 overflow-hidden rounded-full border-2 border-white shadow-md">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop" class="w-full h-full object-cover">
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 mb-6 overflow-hidden rounded-full border-2 border-white shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop" class="w-full h-full object-cover" alt="User profile">
                 </div>
-                <div class="flex text-yellow-400 gap-1 mb-4">
-                    <iconify-icon icon="material-symbols:star" width="16"></iconify-icon>
-                    <iconify-icon icon="material-symbols:star" width="16"></iconify-icon>
-                    <iconify-icon icon="material-symbols:star" width="16"></iconify-icon>
-                    <iconify-icon icon="material-symbols:star" width="16"></iconify-icon>
-                    <iconify-icon icon="material-symbols:star" width="16"></iconify-icon>
+                <div class="flex text-yellow-500 gap-1 mb-6">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
                 </div>
-                <p class="text-lg font-serif italic text-stone-800 mb-4 max-w-lg">
+                <p class="text-xl md:text-2xl font-serif italic text-stone-800 mb-6 leading-relaxed max-w-2xl">
                     <span class="lang-es">"La obra llegó perfecta y el empaquetado era hermoso. Se nota el amor en cada detalle."</span>
                     <span class="lang-en">"The piece arrived perfectly and the packaging was beautiful. You can feel the love in every detail."</span>
                 </p>
-                <cite class="text-[10px] font-bold uppercase tracking-widest text-stone-400 not-italic">— Sofía M. (<span class="lang-es">Compra de Obra</span><span class="lang-en">Art Purchase</span>)</cite>
+                <cite class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 not-italic">
+                    — Sofía M. (<span class="lang-es">Compra de Obra</span><span class="lang-en">Art Purchase</span>)
+                </cite>
             </div>
 
-            <div class="review-card opacity-0 pointer-events-none transition-opacity duration-700 absolute inset-0 flex flex-col items-center">
-                <div class="w-16 h-16 mb-4 overflow-hidden rounded-full border-2 border-white shadow-md">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" class="w-full h-full object-cover">
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 mb-6 overflow-hidden rounded-full border-2 border-white shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" class="w-full h-full object-cover" alt="User profile">
                 </div>
-                <div class="flex text-yellow-400 gap-1 mb-4">
-                    <iconify-icon icon="material-symbols:star" width="16"></iconify-icon>
-                    <iconify-icon icon="material-symbols:star" width="16"></iconify-icon>
-                    <iconify-icon icon="material-symbols:star" width="16"></iconify-icon>
-                    <iconify-icon icon="material-symbols:star" width="16"></iconify-icon>
-                    <iconify-icon icon="material-symbols:star" width="16"></iconify-icon>
+                <div class="flex text-yellow-500 gap-1 mb-6">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
                 </div>
-                <p class="text-lg font-serif italic text-stone-800 mb-4 max-w-lg">
+                <p class="text-xl md:text-2xl font-serif italic text-stone-800 mb-6 leading-relaxed max-w-2xl">
                     <span class="lang-es">"El taller de collage desbloqueó mi creatividad. Cande explica con mucha paciencia."</span>
                     <span class="lang-en">"The collage workshop unlocked my creativity. Cande explains with great patience."</span>
                 </p>
-                <cite class="text-[10px] font-bold uppercase tracking-widest text-stone-400 not-italic">— Lucas R. (<span class="lang-es">Taller Online</span><span class="lang-en">Online Workshop</span>)</cite>
+                <cite class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 not-italic">
+                    — Lucas R. (<span class="lang-es">Taller Online</span><span class="lang-en">Online Workshop</span>)
+                </cite>
             </div>
-            
-        </div>
-    </div>
-</section>
+
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 mb-6 overflow-hidden rounded-full border-2 border-white shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop" class="w-full h-full object-cover" alt="User profile">
+                </div>
+                <div class="flex text-yellow-500 gap-1 mb-6">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="text-xl md:text-2xl font-serif italic text-stone-800 mb-6 leading-relaxed max-w-2xl">
+                    <span class="lang-es">"Las mentorías me ayudaron a encontrar mi propio lenguaje visual. ¡Gracias!"</span>
+                    <span class="lang-en">"The mentorships helped me find my own visual language. Thank you!"</span>
+                </p>
+                <cite class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 not-italic">
+                    — Elena F. (<span class="lang-es">Mentoría</span><span class="lang-en">Mentorship</span>)
+                </cite>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 mb-6 overflow-hidden rounded-full border-2 border-white shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop" class="w-full h-full object-cover" alt="User profile">
+                </div>
+                <div class="flex text-yellow-500 gap-1 mb-6">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="text-xl md:text-2xl font-serif italic text-stone-800 mb-6 leading-relaxed max-w-2xl">
+                    <span class="lang-es">"Impresiones de altísima calidad. Los colores son vibrantes y fieles al original."</span>
+                    <span class="lang-en">"High-quality prints. The colors are vibrant and true to the original."</span>
+                </p>
+                <cite class="text-[10px] font-bold uppercase tracking-[0.2
 
     <!-- FAQ Section (Accordion) -->
     <section class="bg-white border-t border-stone-200 py-20" id="faq">
