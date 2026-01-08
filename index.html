@@ -812,61 +812,60 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
     </section>
 
     <!-- Reviews Section (Auto-Scroll) -->
-   <section id="testimonials" class="bg-stone-50 border-t border-stone-200 pt-24 pb-24">
-    <div class="max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
-        <h3 class="text-xs tracking-[0.2em] font-bold text-stone-400 uppercase mb-12">
+   <!-- Reviews Section (Auto-Scroll) -->
+    <section class="bg-stone-50 border-t border-stone-200 pt-20 pb-20 overflow-hidden">
+        <h3 class="text-xs tracking-[0.2em] font-bold text-stone-400 uppercase mb-12 text-center">
             <span class="lang-es">Reseñas</span><span class="lang-en">Reviews</span>
         </h3>
-        
-        <div class="flex flex-col gap-20 w-full">
-            <div class="flex flex-col items-center">
-                <div class="w-16 h-16 mb-6 overflow-hidden rounded-full border-2 border-white shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150" class="w-full h-full object-cover">
+        <div class="relative w-full max-w-4xl mx-auto px-6 h-[180px]">
+            <div id="review-track" class="absolute w-full transition-opacity duration-700 ease-in-out flex flex-col items-center text-center">
+                <!-- Review 1 -->
+                <div class="review-card opacity-100 transition-opacity duration-500 absolute inset-0 flex flex-col items-center">
+                    <div class="flex text-yellow-400 gap-1 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="text-lg font-serif italic text-stone-800 mb-4 max-w-lg">
+                        "La obra llegó perfecta y el empaquetado era hermoso. Se nota el amor en cada detalle."
+                    </p>
+                    
                 </div>
-                <div class="flex text-yellow-500 gap-1 mb-6">
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+
+                 <!-- Review 2 -->
+                 <div class="review-card opacity-0 pointer-events-none transition-opacity duration-500 absolute inset-0 flex flex-col items-center">
+                    <div class="flex text-yellow-400 gap-1 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="text-lg font-serif italic text-stone-800 mb-4 max-w-lg">
+                        "El taller de collage desbloqueó mi creatividad. Cande explica con mucha paciencia."
+                    </p>
+                    
                 </div>
-                <p class="text-xl md:text-2xl font-serif italic text-stone-800 mb-6 leading-relaxed max-w-2xl">
-                    <span class="lang-es">"La obra llegó perfecta y el empaquetado era hermoso. Se nota el amor en cada detalle."</span>
-                    <span class="lang-en">"The piece arrived perfectly and the packaging was beautiful. You can feel the love in every detail."</span>
-                </p>
-                <cite class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 not-italic">
-                    — Sofía M. (<span class="lang-es">Compra de Obra</span><span class="lang-en">Art Purchase</span>)
-                </cite>
+
+                 <!-- Review 3 -->
+                 <div class="review-card opacity-0 pointer-events-none transition-opacity duration-500 absolute inset-0 flex flex-col items-center">
+                    <div class="flex text-yellow-400 gap-1 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="text-lg font-serif italic text-stone-800 mb-4 max-w-lg">
+                        "Las mentorías me ayudaron a profesionalizar mi portfolio y conseguir mi primer cliente editorial."
+                    </p>
+                    
+                </div>
             </div>
-            <div class="flex flex-col items-center">
-                <div class="w-16 h-16 mb-6 overflow-hidden rounded-full border-2 border-white shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150" class="w-full h-full object-cover">
-                </div>
-                <div class="flex text-yellow-500 gap-1 mb-6">
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                </div>
-                <p class="text-xl md:text-2xl font-serif italic text-stone-800 mb-6 leading-relaxed max-w-2xl">
-                    <span class="lang-es">"El taller de collage desbloqueó mi creatividad. Cande explica con mucha paciencia."</span>
-                    <span class="lang-en">"The collage workshop unlocked my creativity. Cande explains with great patience."</span>
-                </p>
-                <cite class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 not-italic">
-                    — Lucas R. (<span class="lang-es">Taller Online</span><span class="lang-en">Online Workshop</span>)
-                </cite>
-            </div>
-            <div class="flex flex-col items-center">
-                <div class="w-16 h-16 mb-6 overflow-hidden rounded-full border-2 border-white shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150" class="w-full h-full object-cover">
-                </div>
-                <div class="flex text-yellow-500 gap-1 mb-6">
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                </div>
-                <p class="text-xl md:text-2xl font-serif italic text-stone-800 mb-6 leading-relaxed max-w-2xl">
-                    <span class="lang-es">"Las mentorías me ayudaron a encontrar mi lenguaje."</span>
-                    <span class="lang-en">"The mentorships helped me find my language."</span>
-                </p>
-                <cite class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 not-italic">
-                    — Elena F. (<span class="lang-es">Mentoría</span><span class="lang-en">Mentorship</span>)
-                </cite>
-            </div>
-            </div>
-    </div>
-</section>
+        </div>
+    </section>
 
     <!-- FAQ Section (Accordion) -->
     <section class="bg-white border-t border-stone-200 py-20" id="faq">
