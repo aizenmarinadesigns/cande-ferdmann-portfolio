@@ -63,7 +63,6 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
             <!-- Desktop Menu -->
             <div class="hidden lg:flex text-[11px] uppercase font-semibold text-stone-500 tracking-[0.2em] space-x-8 items-center">
                 <a href="#originals" class="hover:text-stone-900 transition-colors text-rose-600"><span class="lang-es">Shop</span><span class="lang-en">Shop</span></a>
-                <a href="#illustrations" class="hover:text-stone-400 transition-colors"><span class="lang-es">Ilustraciones</span><span class="lang-en">Illustrations</span></a>
                 <a href="#mentorship" class="hover:text-stone-900 transition-colors"><span class="lang-es">Mentorías</span><span class="lang-en">Mentorships</span></a>
                 <a href="#workshops" class="hover:text-stone-900 transition-colors"><span class="lang-es">Talleres</span><span class="lang-en">Workshops</span></a>
                 <a href="#about" class="hover:text-stone-900 transition-colors"><span class="lang-es">Bio</span><span class="lang-en">Bio</span></a>
@@ -105,9 +104,6 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
         <span class="lang-es">Shop</span><span class="lang-en">Shop</span>
     </a>
     
-    <a href="#illustrations" class="text-stone-600 hover:text-stone-900" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
-        <span class="lang-es">Ilustraciones</span><span class="lang-en">Illustrations</span>
-    </a>
 
     <a href="#mentorship" class="text-stone-600 hover:text-stone-900" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
         <span class="lang-es">Mentorías</span><span class="lang-en">Mentorship</span>
@@ -362,155 +358,7 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
     </div>
 </main>
 
-    <!-- ILLUSTRATIONS (New) -->
-  <section id="illustrations" class="bg-white pt-24 pb-24 border-t border-stone-100">
-    <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
-        <header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8">
-            <div>
-                <h3 class="text-xs tracking-[0.2em] font-bold text-stone-400 uppercase mb-4">
-                    <span class="lang-es">Trabajos</span><span class="lang-en">Works</span>
-                </h3>
-                <h2 class="serif-title text-xl md:text-2xl text-stone-900 tracking-tight leading-[1.1] mb-4">
-                    <span class="lang-es">Ilustración &<br>Narrativa Visual</span>
-                    <span class="lang-en">Illustration &<br>Visual Narrative</span>
-                </h2>
-                <p class="leading-relaxed text-sm font-light text-zinc-500 max-w-md">
-                    <span class="lang-es">Versatilidad, juego y profesionalismo: Desde libros infantiles hasta diseño editorial e ilustración.</span>
-                    <span class="lang-en">Versatility, play and professionalism: From children's books to editorial design and illustration.</span>
-                </p>
-            </div>
-            <div class="hidden md:flex gap-3 mb-2">
-                <button onclick="document.getElementById('carousel').scrollBy({left: -400, behavior: 'smooth'})" class="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center hover:bg-stone-50 transition-all text-stone-900"><i data-lucide="arrow-left" class="w-4 h-4"></i></button>
-                <button onclick="document.getElementById('carousel').scrollBy({left: 400, behavior: 'smooth'})" class="w-10 h-10 rounded-full bg-stone-900 text-white flex items-center justify-center hover:bg-stone-800 transition-all shadow-lg"><i data-lucide="arrow-right" class="w-4 h-4"></i></button>
-            </div>
-        </header>
-
-        <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-12 no-scrollbar items-start w-full scroll-smooth">
-            <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4 text-left">
-                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                </a>
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-start">
-                        <h4 class="serif-title text-xl text-stone-900">
-                            <span class="lang-es">El Jardín Perdido</span><span class="lang-en">The Lost Garden</span>
-                        </h4>
-                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
-                    </div>
-                    <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">
-                        <span class="lang-es">Editorial • 2023</span><span class="lang-en">Editorial • 2023</span>
-                    </div>
-                </div>
-            </div>
-            <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4 text-left">
-                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
-                    <img src="https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                </a>
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-start">
-                        <h4 class="serif-title text-xl text-stone-900">
-                            <span class="lang-es">Ritmos Urbanos</span><span class="lang-en">Urban Rhythms</span>
-                        </h4>
-                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
-                    </div>
-                    <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">
-                        <span class="lang-es">Campaña • 2023</span><span class="lang-en">Campaign • 2023</span>
-                    </div>
-                </div>
-            </div>
-            <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4 text-left">
-                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                </a>
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-start">
-                        <h4 class="serif-title text-xl text-stone-900">
-                            <span class="lang-es">Colección Flora</span><span class="lang-en">Flora Collection</span>
-                        </h4>
-                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
-                    </div>
-                    <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Packaging • 2022</div>
-                </div>
-            </div>
-            <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4 text-left">
-                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                </a>
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-start">
-                        <h4 class="serif-title text-xl text-stone-900">
-                            <span class="lang-es">Soledad Moderna</span><span class="lang-en">Modern Solitude</span>
-                        </h4>
-                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
-                    </div>
-                    <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">
-                        <span class="lang-es">Prensa • 2022</span><span class="lang-en">Press • 2022</span>
-                    </div>
-                </div>
-            </div>
-            <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4 text-left">
-                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
-                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                </a>
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-start">
-                        <h4 class="serif-title text-xl text-stone-900">
-                            <span class="lang-es">Mosaicos BCN</span><span class="lang-en">BCN Mosaics</span>
-                        </h4>
-                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
-                    </div>
-                    <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Branding • 2021</div>
-                </div>
-            </div>
-            <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4 text-left">
-                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                </a>
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-start">
-                        <h4 class="serif-title text-xl text-stone-900">
-                            <span class="lang-es">Cuentos de Noche</span><span class="lang-en">Night Stories</span>
-                        </h4>
-                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
-                    </div>
-                    <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">
-                        <span class="lang-es">Infantil • 2021</span><span class="lang-en">Children's • 2021</span>
-                    </div>
-                </div>
-            </div>
-            <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4 text-left">
-                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
-                    <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                </a>
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-start">
-                        <h4 class="serif-title text-xl text-stone-900">
-                            <span class="lang-es">La Nueva Era</span><span class="lang-en">The New Era</span>
-                        </h4>
-                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
-                    </div>
-                    <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Editorial • 2020</div>
-                </div>
-            </div>
-            <div class="snap-center shrink-0 w-[85vw] md:w-[320px] group flex flex-col gap-4 text-left">
-                <a href="#contact" class="block relative aspect-square overflow-hidden rounded-[2px] bg-zinc-100">
-                    <img src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                </a>
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-start">
-                        <h4 class="serif-title text-xl text-stone-900">
-                            <span class="lang-es">Bosque Vivo</span><span class="lang-en">Living Forest</span>
-                        </h4>
-                        <a href="#contact" class="text-stone-300 hover:text-stone-900 mt-1"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
-                    </div>
-                    <div class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">
-                        <span class="lang-es">Textil • 2020</span><span class="lang-en">Textile • 2020</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    
 
 <style>
     .no-scrollbar::-webkit-scrollbar { display: none; }
