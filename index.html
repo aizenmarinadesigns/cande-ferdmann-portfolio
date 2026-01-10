@@ -141,22 +141,22 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                 <p class="text-sm">Tu carrito está vacío</p>
              </div>
 
-             <!-- Item 1 Demo -->
-             <div class="flex gap-4 border-b border-stone-50 pb-4">
-                <div class="w-16 h-20 bg-stone-100 rounded-[2px] overflow-hidden flex-shrink-0">
+             <!-- Item 1 -->
+            <div class="flex gap-4">
+                <div class="w-20 h-24 bg-stone-100 rounded-[2px] overflow-hidden flex-shrink-0">
                      <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b37780e0-ff81-4a8b-8077-b72e76cc6f6b_800w.png" class="w-full h-full object-cover">
                 </div>
                 <div class="flex-1 flex flex-col justify-between">
                     <div>
                         <h3 class="text-sm font-semibold text-stone-900 font-serif leading-tight mb-1">Workshop Collage Digital</h3>
-                        <p class="text-xs text-stone-500">Online</p>
+                        <p class="text-xs text-stone-500">Online • Feb 2026</p>
                     </div>
                     <div class="flex justify-between items-end">
-                        <span class="text-sm font-bold text-stone-900">$45.000</span>
+                        <span class="text-xs font-medium underline text-stone-400 cursor-pointer hover:text-stone-900">Eliminar</span>
+                        <span class="text-sm font-bold text-stone-900">$45.00</span>
                     </div>
                 </div>
             </div>
-        </div>
 
         <!-- Footer / Checkout -->
         <div class="p-6 border-t border-stone-100 bg-[#fcfbf9] space-y-4">
@@ -172,14 +172,28 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                     <div class="border border-stone-200 rounded-[2px] p-3 flex items-center justify-between transition-all hover:bg-stone-50">
                         <span class="text-xs font-medium text-stone-700 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card w-4 h-4"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
-                            Mercado Pago / PayPal
+                            <span class="lang-es">Mercado Pago</span><span class="lang-en">Mercado Pago</span>
+                        </span>
                         </span>
                         <div class="w-4 h-4 rounded-full border border-stone-300 flex items-center justify-center">
                             <div class="radio-dot w-2 h-2 bg-stone-900 rounded-full opacity-0 transition-all transform scale-0"></div>
                         </div>
                     </div>
                 </label>
-
+                <label class="cursor-pointer block relative">
+                    <input type="radio" name="payment" value="mp" class="hidden" checked="">
+                    <div class="border border-stone-200 rounded-[2px] p-3 flex items-center justify-between transition-all hover:bg-stone-50">
+                        <span class="text-xs font-medium text-stone-700 flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card w-4 h-4"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+                            <span class="lang-es">Paypal</span><span class="lang-en">Paypal</span>
+                        </span>
+                        </span>
+                        <div class="w-4 h-4 rounded-full border border-stone-300 flex items-center justify-center">
+                            <div class="radio-dot w-2 h-2 bg-stone-900 rounded-full opacity-0 transition-all transform scale-0"></div>
+                        </div>
+                    </div>
+                </label>
+                
                 <label class="cursor-pointer block relative">
                     <input type="radio" name="payment" value="cash" class="hidden">
                     <div class="border border-stone-200 rounded-[2px] p-3 flex items-center justify-between transition-all hover:bg-stone-50">
