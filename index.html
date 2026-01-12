@@ -406,7 +406,7 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                         <p class="text-xs text-stone-500 font-light">20x30cm — <span class="lang-es">Técnica Mixta</span><span class="lang-en">Mixed Media</span></p>
                         <div class="flex items-center justify-between pt-2">
                             <span class="font-bold text-stone-900">$45.000 ARS</span>
-                            <button onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, 'https://tu-imagen.jpg')" class="...">
+                            <button <button onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, this.closest('.group').querySelector('img').src)" class="...">
     <span class="lang-es">Agregar al carrito</span>
     <span class="lang-en">Add to cart</span>
 </button>
@@ -1003,20 +1003,47 @@ function addToCart(titleEs, titleEn, price, image) {
         }
 
         function updateCartUI() {
-            const container = document.getElementById('cart-items');
-            const countBadge = document.getElementById('cart-count');
-            const totalElement = document.querySelector('.serif-title');
-            
-            if (cartItems.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center text-stone-400 py-12">
-                        <p class="text-sm lang-es">Tu carrito está vacío</p>
-                        <p class="text-sm lang-en">Your cart is empty</p>
-                    </div>`;
-                totalElement.innerText = "$0";
-                countBadge.innerText = "0";
-                return;
-            }
+    const container = document.getElementById('cart-items');
+    const countBadge = document.getElementById('cart-count');
+    const totalElement = document.querySelector('.serif-title');
+    
+    if (cartItems.length === 0) {
+        container.innerHTML = `
+            <div class="text-center text-stone-400 py-12">
+                <p class="text-sm lang-es">Tu carrito está vacío</p>
+                <p class="text-sm lang-en">Your cart is empty</p>
+            </div>`;
+        totalElement.innerText = "$0";
+        countBadge.innerText = "0";
+        return;
+    }
+
+    container.innerHTML = cartItems.map((item, index) => `
+        <div class="flex gap-4 border-b border-stone-50 pb-4">
+            <div class="w-16 h-20 bg-stone-100 rounded-[2px] overflow-hidden flex-shrink-0">
+                <img src="${item.image}" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-sm font-semibold text-stone-900 font-serif leading-tight mb-1">
+                        <span class="lang-es">${item.titleEs}</span>
+                        <span class="lang-en">${item.titleEn}</span>
+                    </h3>
+                </div>
+                <div class="flex justify-between items-end">
+                    <span onclick="removeFromCart(${index})" class="text-xs font-medium underline text-stone-400 cursor-pointer hover:text-stone-900">
+                        <span class="lang-es">Eliminar</span><span class="lang-en">Remove</span>
+                    </span>
+                    <span class="text-sm font-bold text-stone-900">$${item.price.toLocaleString('es-AR')}</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+    totalElement.innerText = `$${total.toLocaleString('es-AR')}`;
+    countBadge.innerText = cartItems.length;
+}
 
             // Aquí dibujamos los productos y agregamos el botón de Eliminar
             container.innerHTML = cartItems.map((item, index) => `
