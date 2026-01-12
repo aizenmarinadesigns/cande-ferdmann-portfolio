@@ -413,7 +413,7 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                 <div class="flex items-center justify-between pt-2">
                 <span class="font-bold text-stone-900">$45.000 ARS</span>
                 <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" 
-                onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, this.closest('.group').querySelector('img').src, 'Impresión Papel Algodón', 'Fine Art Print')">
+                onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, this.closest('.group').querySelector('img').src, '20x30cm — Impresión Papel Algodón', '20x30cm — Fine Art Print')">
                 <span class="lang-es">AGREGAR</span><span class="lang-en">ADD TO CART</span>
                 </button>
                 </div>
@@ -450,7 +450,8 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                         <p class="text-xs text-stone-500 font-light">15x20cm — <span class="lang-es">Acuarela</span><span class="lang-en">Watercolor</span></p>
                         <div class="flex items-center justify-between pt-2">
                             <span class="font-bold text-stone-900">$45.000 ARS</span>
-                            <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" onclick="addToCart('Botánica I', 'Botanical I', 45000, this.closest('.group').querySelector('img').src, 'Impresión Papel Algodón', 'Fine Art Print')">
+                            <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" 
+                            onclick="addToCart('Botánica I', 'Botanical I', 45000, this.closest('.group').querySelector('img').src, '15x20cm — Impresión Papel Algodón', '15x20cm — Fine Art Print')">
                             <span class="lang-es">Agregar</span><span class="lang-en">Add to Cart</span>
                             </button>
                         </div>
@@ -471,7 +472,8 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                         <div class="flex items-center justify-between pt-2">
     <span class="font-bold text-stone-900">$85.000 ARS</span>
     <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" 
-            onclick="addToCart('Nocturno', 'Nocturnal', 85000, this.closest('.group').querySelector('img').src, 'Obra Original', 'Original Work')">
+            onclick="addToCart('Nocturno', 'Nocturnal', 85000, this.closest('.group').querySelector('img').src, '30x40cm — Obra Original', '30x40cm — Original Work')">
+                            <span class="lang-es">Agregar</span><span class="lang-en">Add to Cart</span>
         <span class="lang-es">AGREGAR</span><span class="lang-en">ADD TO CART</span>
     </button>
 </div>
@@ -1023,30 +1025,30 @@ function updateCartUI() {
     }
 
     container.innerHTML = cartItems.map((item, index) => `
-        <div class="flex gap-4 border-b border-stone-50 pb-4">
-            <div class="w-16 h-20 bg-stone-100 overflow-hidden flex-shrink-0">
-                <img src="${item.image}" class="w-full h-full object-cover">
+    <div class="flex gap-4 border-b border-stone-50 pb-4">
+        <div class="w-16 h-20 bg-stone-100 overflow-hidden flex-shrink-0">
+            <img src="${item.image}" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-1 flex flex-col justify-between">
+            <div>
+                <h3 class="text-sm font-semibold text-stone-900 font-serif leading-tight">
+                    <span class="lang-es">${item.titleEs}</span>
+                    <span class="lang-en">${item.titleEn}</span>
+                </h3>
+                <p class="text-[10px] text-stone-400 uppercase tracking-wide mt-1">
+                    <span class="lang-es">${item.materialEs}</span>
+                    <span class="lang-en">${item.materialEn}</span>
+                </p>
             </div>
-            <div class="flex-1 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-sm font-semibold text-stone-900 font-serif leading-tight">
-                        <span class="lang-es">${item.titleEs}</span>
-                        <span class="lang-en">${item.titleEn}</span>
-                    </h3>
-                    <p class="text-[10px] text-stone-400 uppercase tracking-wide mt-1">
-                        <span class="lang-es">${item.materialEs}</span>
-                        <span class="lang-en">${item.materialEn}</span>
-                    </p>
-                </div>
-                <div class="flex justify-between items-end">
-                    <span onclick="removeFromCart(${index})" class="text-xs underline text-stone-400 cursor-pointer hover:text-stone-900">
-                        <span class="lang-es">Eliminar</span><span class="lang-en">Remove</span>
-                    </span>
-                    <span class="text-sm font-bold text-stone-900">$${item.price.toLocaleString('es-AR')}</span>
-                </div>
+            <div class="flex justify-between items-end">
+                <span onclick="removeFromCart(${index})" class="text-xs underline text-stone-400 cursor-pointer hover:text-stone-900">
+                    <span class="lang-es">Eliminar</span><span class="lang-en">Remove</span>
+                </span>
+                <span class="text-sm font-bold text-stone-900">$${item.price.toLocaleString('es-AR')}</span>
             </div>
         </div>
-    `).join('');
+    </div>
+`).join('');
 
     const total = cartItems.reduce((sum, item) => sum + item.price, 0);
     if (totalElement) totalElement.innerText = `$${total.toLocaleString('es-AR')}`;
