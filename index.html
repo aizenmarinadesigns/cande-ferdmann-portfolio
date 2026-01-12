@@ -406,7 +406,7 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                         <p class="text-xs text-stone-500 font-light">20x30cm — <span class="lang-es">Técnica Mixta</span><span class="lang-en">Mixed Media</span></p>
                         <div class="flex items-center justify-between pt-2">
                             <span class="font-bold text-stone-900">$45.000 ARS</span>
-                            <button <button <button onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, this.closest('.group').querySelector('img').src)" class="...">
+                          <button onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, this.closest('.group').querySelector('img').src)" class="...">
     <span class="lang-es">Agregar al carrito</span>
     <span class="lang-en">Add to cart</span>
 </button>
@@ -444,8 +444,8 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                         <p class="text-xs text-stone-500 font-light">15x20cm — <span class="lang-es">Acuarela</span><span class="lang-en">Watercolor</span></p>
                         <div class="flex items-center justify-between pt-2">
                             <span class="font-bold text-stone-900">$25.000 ARS</span>
-                             <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" onclick="addToCart('Botánica I', 25000)">
-                                <span class="lang-es">Agregar</span><span class="lang-en">Add to Cart</span>
+                            <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" onclick="addToCart('Botánica I', 'Botanical I', 25000, this.closest('.group').querySelector('img').src)">
+                            <span class="lang-es">Agregar</span><span class="lang-en">Add to Cart</span>
                             </button>
                         </div>
                     </div>
@@ -591,10 +591,10 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                             <span class="lang-en">Ideate, scann, cut and play. Beginner level.</span>
                         </p>
                     </div>
-                    <button class="text-left inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-stone-900 opacity-60 group-hover:opacity-100 transition-all" onclick="addToCart('Collage Digital', 40000)">
-                        <span class="lang-es">Agregar ($40k)</span><span class="lang-en">Add ($40k)</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus w-3 h-3 ml-2"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                    <button onclick="addToCart('Workshop Collage', 'Collage Workshop', 45000, this.closest('.group').querySelector('img').src)" class="...">
+                    <span class="lang-es">Agregar ($45k)</span><span class="lang-en">Add ($45k)</span>
                     </button>
-                </div>
+                    </div>
 
                 <!-- Workshop 2 -->
                 <div class="group relative hover:-translate-y-1 hover:shadow-lg hover:shadow-stone-200/50 transition-all duration-500 bg-white border border-stone-100 rounded-[2px] p-8 flex flex-col justify-between h-full">
@@ -986,27 +986,27 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
             }
         }
 
-       // 1. La lista empieza vacía
+       // Carrito
 let cartItems = [];
 
-// 2. Esta función recibe los 4 datos del botón
 function addToCart(titleEs, titleEn, price, image) {
-    cartItems.push({ titleEs, titleEn, price, image });
+    // Si falta la imagen por algún error, ponemos un placeholder para que no se rompa
+    const imgUrl = image || 'https://via.placeholder.com/150';
+    cartItems.push({ titleEs, titleEn, price, image: imgUrl });
     updateCartUI();
     toggleCart(); 
 }
 
-// 3. Esta función quita elementos
 function removeFromCart(index) {
     cartItems.splice(index, 1);
     updateCartUI();
 }
 
-// 4. Esta función DIBUJA el carrito (estaba duplicada, aquí está una sola vez)
 function updateCartUI() {
     const container = document.getElementById('cart-items');
     const countBadge = document.getElementById('cart-count');
-    const totalElement = document.querySelector('.serif-title');
+    // Buscamos el total específicamente dentro del footer del carrito
+    const totalElement = document.querySelector('#cart-drawer .serif-title');
     
     if (cartItems.length === 0) {
         container.innerHTML = `
@@ -1014,8 +1014,8 @@ function updateCartUI() {
                 <p class="text-sm lang-es">Tu carrito está vacío</p>
                 <p class="text-sm lang-en">Your cart is empty</p>
             </div>`;
-        totalElement.innerText = "$0";
-        countBadge.innerText = "0";
+        if (totalElement) totalElement.innerText = "$0";
+        if (countBadge) countBadge.innerText = "0";
         return;
     }
 
@@ -1042,21 +1042,19 @@ function updateCartUI() {
     `).join('');
 
     const total = cartItems.reduce((sum, item) => sum + item.price, 0);
-    totalElement.innerText = `$${total.toLocaleString('es-AR')}`;
-    countBadge.innerText = cartItems.length;
+    if (totalElement) totalElement.innerText = `$${total.toLocaleString('es-AR')}`;
+    if (countBadge) countBadge.innerText = cartItems.length;
 }
 
-// 5. Función de pago
 function handleCheckout() {
-    const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
     if (cartItems.length === 0) return alert("El carrito está vacío");
+    const paymentMethod = document.querySelector('input[name="payment"]:checked')?.value || 'cash';
 
     if (paymentMethod === 'cash') {
-        // Usamos titleEs para el mensaje de WhatsApp
         const text = `Hola Candela! Quiero comprar: ${cartItems.map(i => i.titleEs).join(', ')}. Total: $${cartItems.reduce((a,b)=>a+b.price,0).toLocaleString('es-AR')}`;
         window.location.href = `https://wa.me/34623282101?text=${encodeURIComponent(text)}`;
     } else {
-        alert("Redirigiendo a pasarela de pago (Demo)...");
+        alert("Redirigiendo a pasarela de pago...");
     }
 }
 
