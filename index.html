@@ -406,7 +406,7 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                         <p class="text-xs text-stone-500 font-light">20x30cm — <span class="lang-es">Técnica Mixta</span><span class="lang-en">Mixed Media</span></p>
                         <div class="flex items-center justify-between pt-2">
                             <span class="font-bold text-stone-900">$45.000 ARS</span>
-                            <button <button onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, this.closest('.group').querySelector('img').src)" class="...">
+                            <button <button <button onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, this.closest('.group').querySelector('img').src)" class="...">
     <span class="lang-es">Agregar al carrito</span>
     <span class="lang-en">Add to cart</span>
 </button>
@@ -986,23 +986,24 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
             }
         }
 
-        // Simple Cart Logic
-        let cartItems = [];
+       // 1. La lista empieza vacía
+let cartItems = [];
 
-        // Cambiamos (title, price) por (titleEs, titleEn, price, image)
+// 2. Esta función recibe los 4 datos del botón
 function addToCart(titleEs, titleEn, price, image) {
-    cartItems.push({ titleEs, titleEn, price, image }); // Guardamos todo
+    cartItems.push({ titleEs, titleEn, price, image });
     updateCartUI();
     toggleCart(); 
 }
 
-        // FUNCIÓN NUEVA PARA ELIMINAR
-        function removeFromCart(index) {
-            cartItems.splice(index, 1); // Saca el producto de la lista
-            updateCartUI(); // Actualiza lo que ves
-        }
+// 3. Esta función quita elementos
+function removeFromCart(index) {
+    cartItems.splice(index, 1);
+    updateCartUI();
+}
 
-        function updateCartUI() {
+// 4. Esta función DIBUJA el carrito (estaba duplicada, aquí está una sola vez)
+function updateCartUI() {
     const container = document.getElementById('cart-items');
     const countBadge = document.getElementById('cart-count');
     const totalElement = document.querySelector('.serif-title');
@@ -1045,45 +1046,19 @@ function addToCart(titleEs, titleEn, price, image) {
     countBadge.innerText = cartItems.length;
 }
 
-            // Aquí dibujamos los productos y agregamos el botón de Eliminar
-            container.innerHTML = cartItems.map((item, index) => `
-    <div class="flex gap-4 border-b border-stone-50 pb-4">
-        <div class="w-16 h-20 bg-stone-100 rounded-[2px] overflow-hidden flex-shrink-0">
-            <img src="${item.image}" class="w-full h-full object-cover">
-        </div>
-        <div class="flex-1 flex flex-col justify-between">
-            <div>
-                <h3 class="text-sm font-semibold text-stone-900 font-serif leading-tight mb-1">
-                    <span class="lang-es">${item.titleEs}</span>
-                    <span class="lang-en">${item.titleEn}</span>
-                </h3>
-            </div>
-            <div class="flex justify-between items-end">
-                <span onclick="removeFromCart(${index})" class="text-xs font-medium underline text-stone-400 cursor-pointer hover:text-stone-900">
-                    <span class="lang-es">Eliminar</span><span class="lang-en">Remove</span>
-                </span>
-                <span class="text-sm font-bold text-stone-900">$${item.price.toLocaleString('es-AR')}</span>
-            </div>
-        </div>
-    </div>
-`).join('');
-            
-            const total = cartItems.reduce((sum, item) => sum + item.price, 0);
-            totalElement.innerText = `$${total.toLocaleString('es-AR')}`;
-            countBadge.innerText = cartItems.length;
-        }
+// 5. Función de pago
+function handleCheckout() {
+    const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+    if (cartItems.length === 0) return alert("El carrito está vacío");
 
-        function handleCheckout() {
-            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
-            if (cartItems.length === 0) return alert("El carrito está vacío");
-
-            if (paymentMethod === 'cash') {
-                const text = `Hola Candela! Quiero comprar: ${cartItems.map(i => i.title).join(', ')}. Total: $${cartItems.reduce((a,b)=>a+b.price,0).toLocaleString('es-AR')}`;
-                window.location.href = `https://wa.me/34623282101?text=${encodeURIComponent(text)}`;
-            } else {
-                alert("Redirigiendo a pasarela de pago (Demo)...");
-            }
-        }
+    if (paymentMethod === 'cash') {
+        // Usamos titleEs para el mensaje de WhatsApp
+        const text = `Hola Candela! Quiero comprar: ${cartItems.map(i => i.titleEs).join(', ')}. Total: $${cartItems.reduce((a,b)=>a+b.price,0).toLocaleString('es-AR')}`;
+        window.location.href = `https://wa.me/34623282101?text=${encodeURIComponent(text)}`;
+    } else {
+        alert("Redirigiendo a pasarela de pago (Demo)...");
+    }
+}
 
         // Reviews Carousel Auto-Scroll
         let currentReview = 0;
