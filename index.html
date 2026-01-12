@@ -407,12 +407,11 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                         <h4 class="text-lg font-serif text-stone-900 leading-none">El Jardín Secreto</h4>
                         <p class="text-xs text-stone-500 font-light">20x30cm — <span class="lang-es">Técnica Mixta</span><span class="lang-en">Mixed Media</span></p>
                         <div class="flex items-center justify-between pt-2">
-                            <span class="font-bold text-stone-900">$45.000 ARS</span>
-                          <button onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, this.closest('.group').querySelector('img').src)" class="...">
-    <span class="lang-es">Agregar al carrito</span>
-    <span class="lang-en">Add to cart</span>
-</button>
-                        </div>
+                        <span class="font-bold text-stone-900">$45.000 ARS</span>
+                        <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider"onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, this.closest('.group').querySelector('img').src)">
+                        <span class="lang-es">AGREGAR</span><span class="lang-en">ADD TO CART</span>
+                        </button>
+                    </div>
                     </div>
                 </div>
 
@@ -465,11 +464,12 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                         <h4 class="text-lg font-serif text-stone-900 leading-none">Nocturno</h4>
                         <p class="text-xs text-stone-500 font-light">30x40cm — <span class="lang-es">Tinta China</span><span class="lang-en">Ink</span></p>
                         <div class="flex items-center justify-between pt-2">
-                            <span class="font-bold text-stone-900">$55.000 ARS</span>
-                             <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" onclick="addToCart('Nocturno', 55000)">
-                                <span class="lang-es">Agregar</span><span class="lang-en">Add to Cart</span>
-                            </button>
-                        </div>
+    <span class="font-bold text-stone-900">$55.000 ARS</span>
+    <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" 
+            onclick="addToCart('Nocturno', 'Nocturnal', 55000, this.closest('.group').querySelector('img').src)">
+        <span class="lang-es">AGREGAR</span><span class="lang-en">ADD TO CART</span>
+    </button>
+</div>
                     </div>
                 </div>
 
