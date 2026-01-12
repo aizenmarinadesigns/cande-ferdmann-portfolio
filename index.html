@@ -600,8 +600,8 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
         </p>
     </div>
     <button class="text-left inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-stone-900 opacity-60 group-hover:opacity-100 transition-all" 
-            onclick="addToCart('Collage digital', 'Digital Collage', 45000, 'https://cdn-icons-png.flaticon.com/512/3659/3659832.png', 'Workshop Online', 'Online Workshop')">
-        <span class="lang-es">Agregar ($45K)</span><span class="lang-en">Add ($45K)</span> 
+        onclick="addToCart('Collage digital', 'Digital Collage', 45000, 'https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/flower.svg', 'Taller Online', 'Online Workshop')">
+    <span class="lang-es">AGREGAR ($45K)</span><span class="lang-en">ADD ($45K)</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus w-3 h-3 ml-2"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
     </button>
 </div>
@@ -622,8 +622,7 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
         </p>
     </div>
     <button class="text-left inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-stone-900 opacity-60 group-hover:opacity-100 transition-all" 
-            onclick="addToCart('Collage & Papel', 'Collage & Paper', 35000, 'https://cdn-icons-png.flaticon.com/512/107/107231.png', 'Workshop Online', 'Online Workshop')">
-        <span class="lang-es">AGREGAR ($35K)</span><span class="lang-en">ADD ($35K)</span> 
+        onclick="addToCart('Collage & Papel', 'Collage & Paper', 35000, 'https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/scissors.svg', 'Taller Online', 'Online Workshop')">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus w-3 h-3 ml-2"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
     </button>
 </div>
@@ -1000,9 +999,10 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
         }
 
        // Cart Logic
-let cartItems = [];
+let cartItems = []; // Esta es nuestra lista global
 
 function addToCart(titleEs, titleEn, price, image, materialEs, materialEn) {
+    // Agregamos el objeto con todos sus datos
     cartItems.push({ 
         titleEs, 
         titleEn, 
@@ -1012,7 +1012,15 @@ function addToCart(titleEs, titleEn, price, image, materialEs, materialEn) {
         materialEn: materialEn || '' 
     });
     updateCartUI();
-    toggleCart(); 
+    // Abrimos el carrito para que el usuario vea que se agregó
+    const cartElement = document.getElementById('cart-sidebar');
+    if (cartElement) cartElement.classList.remove('translate-x-full');
+}
+
+function removeFromCart(index) {
+    // Esta es la parte que estaba fallando: borra el item y refresca la vista
+    cartItems.splice(index, 1);
+    updateCartUI();
 }
 
 function updateCartUI() {
@@ -1028,30 +1036,30 @@ function updateCartUI() {
     }
 
     container.innerHTML = cartItems.map((item, index) => `
-    <div class="flex gap-4 border-b border-stone-50 pb-4">
-        <div class="w-16 h-20 bg-stone-100 overflow-hidden flex-shrink-0">
-            <img src="${item.image}" class="w-full h-full object-cover">
-        </div>
-        <div class="flex-1 flex flex-col justify-between">
-            <div>
-                <h3 class="text-sm font-semibold text-stone-900 font-serif leading-tight">
-                    <span class="lang-es">${item.titleEs}</span>
-                    <span class="lang-en">${item.titleEn}</span>
-                </h3>
-                <p class="text-[10px] text-stone-400 uppercase tracking-wide mt-1">
-                    <span class="lang-es">${item.materialEs}</span>
-                    <span class="lang-en">${item.materialEn}</span>
-                </p>
+        <div class="flex gap-4 border-b border-stone-50 pb-4">
+            <div class="w-16 h-20 bg-stone-50 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                <img src="${item.image}" class="w-full h-full object-contain">
             </div>
-            <div class="flex justify-between items-end">
-                <span onclick="removeFromCart(${index})" class="text-xs underline text-stone-400 cursor-pointer hover:text-stone-900">
-                    <span class="lang-es">Eliminar</span><span class="lang-en">Remove</span>
-                </span>
-                <span class="text-sm font-bold text-stone-900">$${item.price.toLocaleString('es-AR')}</span>
+            <div class="flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-sm font-semibold text-stone-900 font-serif leading-tight">
+                        <span class="lang-es">${item.titleEs}</span>
+                        <span class="lang-en">${item.titleEn}</span>
+                    </h3>
+                    <p class="text-[10px] text-stone-400 uppercase tracking-wide mt-1">
+                        <span class="lang-es">${item.materialEs}</span>
+                        <span class="lang-en">${item.materialEn}</span>
+                    </p>
+                </div>
+                <div class="flex justify-between items-end">
+                    <button onclick="removeFromCart(${index})" class="text-xs underline text-rose-400 hover:text-rose-600 cursor-pointer bg-transparent border-none p-0">
+                        <span class="lang-es">Eliminar</span><span class="lang-en">Remove</span>
+                    </button>
+                    <span class="text-sm font-bold text-stone-900">$${item.price.toLocaleString('es-AR')}</span>
+                </div>
             </div>
         </div>
-    </div>
-`).join('');
+    `).join('');
 
     const total = cartItems.reduce((sum, item) => sum + item.price, 0);
     if (totalElement) totalElement.innerText = `$${total.toLocaleString('es-AR')}`;
