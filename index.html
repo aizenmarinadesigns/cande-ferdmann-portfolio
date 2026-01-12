@@ -403,16 +403,21 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                             <span class="lang-es">Disponible</span><span class="lang-en">Available</span>
                         </span>
                     </div>
-                    <div class="space-y-1">
-                        <h4 class="text-lg font-serif text-stone-900 leading-none">El Jardín Secreto</h4>
-                        <p class="text-xs text-stone-500 font-light">20x30cm — <span class="lang-es">Técnica Mixta</span><span class="lang-en">Mixed Media</span></p>
-                        <div class="flex items-center justify-between pt-2">
-                        <span class="font-bold text-stone-900">$45.000 ARS</span>
-                        <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider"onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, this.closest('.group').querySelector('img').src)">
-                        <span class="lang-es">AGREGAR</span><span class="lang-en">ADD TO CART</span>
-                        </button>
-                    </div>
-                    </div>
+                <div class="space-y-1">
+                <h4 class="text-lg font-serif text-stone-900 leading-none">El Jardín Secreto</h4>
+                <p class="text-xs text-stone-500 font-light">20x30cm — 
+                <span class="lang-es">Impresión en Papel de Algodón</span>
+                <span class="lang-en">Fine Art Print</span>
+                </p>
+    
+                <div class="flex items-center justify-between pt-2">
+                <span class="font-bold text-stone-900">$45.000 ARS</span>
+                <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" 
+                onclick="addToCart('El Jardín Secreto', 'The Secret Garden', 45000, this.closest('.group').querySelector('img').src, 'Impresión Papel Algodón', 'Fine Art Print')">
+                <span class="lang-es">AGREGAR</span><span class="lang-en">ADD TO CART</span>
+                </button>
+                </div>
+                </div>
                 </div>
 
                 <!-- Product 2 -->
@@ -444,8 +449,8 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                         <h4 class="text-lg font-serif text-stone-900 leading-none">Botánica I</h4>
                         <p class="text-xs text-stone-500 font-light">15x20cm — <span class="lang-es">Acuarela</span><span class="lang-en">Watercolor</span></p>
                         <div class="flex items-center justify-between pt-2">
-                            <span class="font-bold text-stone-900">$25.000 ARS</span>
-                            <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" onclick="addToCart('Botánica I', 'Botanical I', 25000, this.closest('.group').querySelector('img').src)">
+                            <span class="font-bold text-stone-900">$45.000 ARS</span>
+                            <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" onclick="addToCart('Botánica I', 'Botanical I', 45000, this.closest('.group').querySelector('img').src, 'Impresión Papel Algodón', 'Fine Art Print')">
                             <span class="lang-es">Agregar</span><span class="lang-en">Add to Cart</span>
                             </button>
                         </div>
@@ -464,9 +469,9 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                         <h4 class="text-lg font-serif text-stone-900 leading-none">Nocturno</h4>
                         <p class="text-xs text-stone-500 font-light">30x40cm — <span class="lang-es">Tinta China</span><span class="lang-en">Ink</span></p>
                         <div class="flex items-center justify-between pt-2">
-    <span class="font-bold text-stone-900">$55.000 ARS</span>
+    <span class="font-bold text-stone-900">$85.000 ARS</span>
     <button class="text-xs underline text-rose-500 hover:text-rose-700 uppercase font-bold tracking-wider" 
-            onclick="addToCart('Nocturno', 'Nocturnal', 55000, this.closest('.group').querySelector('img').src)">
+            onclick="addToCart('Nocturno', 'Nocturnal', 85000, this.closest('.group').querySelector('img').src, 'Obra Original', 'Original Work')">
         <span class="lang-es">AGREGAR</span><span class="lang-en">ADD TO CART</span>
     </button>
 </div>
@@ -991,32 +996,27 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
        // Cart Logic
 let cartItems = [];
 
-function addToCart(titleEs, titleEn, price, image) {
-    // Si no se pasa imagen, buscamos una por defecto para que no quede vacío
-    const imgUrl = image || '';
-    cartItems.push({ titleEs, titleEn, price, image: imgUrl });
+function addToCart(titleEs, titleEn, price, image, materialEs, materialEn) {
+    // Agregamos el material a la lista de datos
+    cartItems.push({ 
+        titleEs, 
+        titleEn, 
+        price, 
+        image: image || '', 
+        materialEs: materialEs || '', 
+        materialEn: materialEn || '' 
+    });
     updateCartUI();
     toggleCart(); 
 }
 
-function removeFromCart(index) {
-    cartItems.splice(index, 1);
-    updateCartUI();
-}
-
 function updateCartUI() {
     const container = document.getElementById('cart-items');
+    const totalElement = document.getElementById('cart-total-amount');
     const countBadge = document.getElementById('cart-count');
     
-    // ESTA LÍNEA BUSCA EL TOTAL: Asegurate que el span del total tenga el ID "cart-total-amount"
-    const totalElement = document.getElementById('cart-total-amount');
-    
     if (cartItems.length === 0) {
-        container.innerHTML = `
-            <div class="text-center text-stone-400 py-12">
-                <p class="text-sm lang-es">Tu carrito está vacío</p>
-                <p class="text-sm lang-en">Your cart is empty</p>
-            </div>`;
+        container.innerHTML = `<div class="text-center text-stone-400 py-12 text-sm"><span class="lang-es">Tu carrito está vacío</span><span class="lang-en">Your cart is empty</span></div>`;
         if (totalElement) totalElement.innerText = "$0";
         if (countBadge) countBadge.innerText = "0";
         return;
@@ -1024,18 +1024,22 @@ function updateCartUI() {
 
     container.innerHTML = cartItems.map((item, index) => `
         <div class="flex gap-4 border-b border-stone-50 pb-4">
-            <div class="w-16 h-20 bg-stone-100 rounded-[2px] overflow-hidden flex-shrink-0">
+            <div class="w-16 h-20 bg-stone-100 overflow-hidden flex-shrink-0">
                 <img src="${item.image}" class="w-full h-full object-cover">
             </div>
             <div class="flex-1 flex flex-col justify-between">
                 <div>
-                    <h3 class="text-sm font-semibold text-stone-900 font-serif leading-tight mb-1">
+                    <h3 class="text-sm font-semibold text-stone-900 font-serif leading-tight">
                         <span class="lang-es">${item.titleEs}</span>
                         <span class="lang-en">${item.titleEn}</span>
                     </h3>
+                    <p class="text-[10px] text-stone-400 uppercase tracking-wide mt-1">
+                        <span class="lang-es">${item.materialEs}</span>
+                        <span class="lang-en">${item.materialEn}</span>
+                    </p>
                 </div>
                 <div class="flex justify-between items-end">
-                    <span onclick="removeFromCart(${index})" class="text-xs font-medium underline text-stone-400 cursor-pointer hover:text-stone-900">
+                    <span onclick="removeFromCart(${index})" class="text-xs underline text-stone-400 cursor-pointer hover:text-stone-900">
                         <span class="lang-es">Eliminar</span><span class="lang-en">Remove</span>
                     </span>
                     <span class="text-sm font-bold text-stone-900">$${item.price.toLocaleString('es-AR')}</span>
