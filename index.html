@@ -148,6 +148,11 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
         <div class="p-6 border-t border-stone-100 bg-[#fcfbf9] space-y-4">
             
             <!-- Payment Selector -->
+            <div class="flex justify-between items-center pb-4 border-b border-stone-100">
+                <span class="text-xs uppercase font-bold tracking-widest text-stone-500">Total</span>
+                <span id="cart-total-amount" class="text-lg font-bold text-stone-900 serif-title">$0</span>
+            </div>
+
             <div class="space-y-3">
                 <span class="text-[10px] font-bold uppercase tracking-widest text-stone-400 block mb-2">
                     <span class="lang-es">Método de Pago</span><span class="lang-en">Payment Method</span>
@@ -160,19 +165,18 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card w-4 h-4"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
                             <span class="lang-es">Mercado Pago</span><span class="lang-en">Mercado Pago</span>
                         </span>
-                        </span>
                         <div class="w-4 h-4 rounded-full border border-stone-300 flex items-center justify-center">
                             <div class="radio-dot w-2 h-2 bg-stone-900 rounded-full opacity-0 transition-all transform scale-0"></div>
                         </div>
                     </div>
                 </label>
+
                 <label class="cursor-pointer block relative">
-                    <input type="radio" name="payment" value="mp" class="hidden" checked="">
+                    <input type="radio" name="payment" value="paypal" class="hidden">
                     <div class="border border-stone-200 rounded-[2px] p-3 flex items-center justify-between transition-all hover:bg-stone-50">
                         <span class="text-xs font-medium text-stone-700 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card w-4 h-4"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
                             <span class="lang-es">Paypal</span><span class="lang-en">Paypal</span>
-                        </span>
                         </span>
                         <div class="w-4 h-4 rounded-full border border-stone-300 flex items-center justify-center">
                             <div class="radio-dot w-2 h-2 bg-stone-900 rounded-full opacity-0 transition-all transform scale-0"></div>
@@ -194,8 +198,6 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
                 </label>
             </div>
 
-           
-            
             <button onclick="handleCheckout()" class="w-full bg-stone-900 hover:bg-stone-800 text-white py-4 rounded-[2px] transition-colors flex items-center justify-center gap-2 group">
                 <span class="text-[11px] font-bold tracking-[0.15em] uppercase"><span class="lang-es">Finalizar Compra</span><span class="lang-en">Checkout</span></span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
@@ -986,12 +988,12 @@ input[type="radio"]:checked + div .radio-dot { opacity: 1; transform: scale(1); 
             }
         }
 
-       // Carrito
+       // Cart Logic
 let cartItems = [];
 
 function addToCart(titleEs, titleEn, price, image) {
-    // Si falta la imagen por algún error, ponemos un placeholder para que no se rompa
-    const imgUrl = image || 'https://via.placeholder.com/150';
+    // Si no se pasa imagen, buscamos una por defecto para que no quede vacío
+    const imgUrl = image || '';
     cartItems.push({ titleEs, titleEn, price, image: imgUrl });
     updateCartUI();
     toggleCart(); 
@@ -1005,8 +1007,9 @@ function removeFromCart(index) {
 function updateCartUI() {
     const container = document.getElementById('cart-items');
     const countBadge = document.getElementById('cart-count');
-    // Buscamos el total específicamente dentro del footer del carrito
-    const totalElement = document.querySelector('#cart-drawer .serif-title');
+    
+    // ESTA LÍNEA BUSCA EL TOTAL: Asegurate que el span del total tenga el ID "cart-total-amount"
+    const totalElement = document.getElementById('cart-total-amount');
     
     if (cartItems.length === 0) {
         container.innerHTML = `
@@ -1044,18 +1047,6 @@ function updateCartUI() {
     const total = cartItems.reduce((sum, item) => sum + item.price, 0);
     if (totalElement) totalElement.innerText = `$${total.toLocaleString('es-AR')}`;
     if (countBadge) countBadge.innerText = cartItems.length;
-}
-
-function handleCheckout() {
-    if (cartItems.length === 0) return alert("El carrito está vacío");
-    const paymentMethod = document.querySelector('input[name="payment"]:checked')?.value || 'cash';
-
-    if (paymentMethod === 'cash') {
-        const text = `Hola Candela! Quiero comprar: ${cartItems.map(i => i.titleEs).join(', ')}. Total: $${cartItems.reduce((a,b)=>a+b.price,0).toLocaleString('es-AR')}`;
-        window.location.href = `https://wa.me/34623282101?text=${encodeURIComponent(text)}`;
-    } else {
-        alert("Redirigiendo a pasarela de pago...");
-    }
 }
 
         // Reviews Carousel Auto-Scroll
